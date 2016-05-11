@@ -1,11 +1,12 @@
-import printer from 'node-printer';
+const printer = require('printer');
 
-export default class PrinterWrapper {
+class PrinterWrapper {
     constructor() {
+        console.log(printer.getPrinters);
         this.printers = printer.getPrinters();
     }
 
-    get printers() {
+    get returnPrinters() {
         return this.printers;
     }
 
@@ -24,3 +25,5 @@ export default class PrinterWrapper {
      return printer.getJobs(this.printers[0], jobId);
     }
 }
+
+export default new PrinterWrapper();

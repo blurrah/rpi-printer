@@ -18,7 +18,7 @@ router.use(convert(bodyParser({
     multipart: true
 })));
 
-router.use('/status*', statusRouter.routes());
+router.use('/printers*', statusRouter.routes());
 router.use('/upload*', printRouter.routes());
 router.use('/document*', documentRouter.routes());
 router.use('/*', indexRouter.routes());
